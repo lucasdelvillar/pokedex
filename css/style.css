@@ -134,9 +134,9 @@ input::placeholder {
   width: 15px;
   background-color: white;
   border-radius: 50%;
-  position: relative;
-  top: 0.8px;
-  right: 0.8px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
   }
 
 .pokeball-white {
