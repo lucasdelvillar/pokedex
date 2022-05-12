@@ -1,0 +1,239 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+img{
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  /* background-color: rgba(246, 248, 252, 1) */
+  background-color: rgba(244, 244, 248, 1)
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+/******************************************
+/* NAVIGATION
+/*******************************************/
+
+.primary-nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 10%;
+  height: 85px;
+  width: 80%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.primary-nav-links {
+  /* padding-top: 43px; */
+  color: rgba(115, 115, 115, 1);
+  font-size: 1.5em;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* need ul, li to fill container so that a can fill container and border bottom / color change to red at the same time */
+ul, .nav-item-container{
+  height: 100%;
+  /* needed to center text since pokeball image takes up space on same line as anchor*/
+  padding-right: 2em
+}
+
+nav img {
+  height: 30px
+}
+
+.nav-item-container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 125%;
+}
+
+/* TODO: add a bouncy animation to pokeball */
+
+/******************************************
+/* Search Bar
+/*******************************************/
+
+.search-bar-container {
+  position: relative;
+  height: 50px;
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 5%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.search {
+  border: none;
+  height: 100%;
+  width: 80%;
+  border-radius:10px;
+  outline: 0;
+}
+
+input,
+input::placeholder {
+    font-size: 15px;
+    padding-top: 6px;
+}
+
+.search-bar-container:hover, .search-bar-container:focus {
+    border: 0.5px solid #FF3131;
+    background-color: white;
+  }
+
+.search-btn {
+  position: absolute;
+  /* top: 7px;
+  left: 23px; */
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(247, 33, 25);
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(247, 33, 25, 0.9) 4px 3px 10px;
+}
+
+.circle {
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  top: 0.8px;
+  right: 0.8px;
+  }
+
+.pokeball-white {
+  height: 15px;
+  width: 15px;
+}
+
+
+/******************************************
+/* DISPLAY AREA
+/*******************************************/
+
+.display-area-container {
+  position: relative;
+  margin-top: 60px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  width: 250px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pokemon-image {
+  position: absolute;
+  top: -47px;
+  /* may need to get rid of when adding more cards */
+  /* maybe include this class as part of flex container and then position with absolute to adjust, card-container may need position: relative for this to work */
+  right: 70px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 80%;
+}
+
+.card-info #number {
+  color: grey;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card-info #name {
+  font-size: 18px;
+  font-weight: bold;
+  /* margin-top: 5px;
+  margin-bottom: 15px; */
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+/* TODO: add colors for each type */
+.type-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 130px;
+}
+
+.card-info #type1, .card-info #type2 {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.type1-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+
+}
+
+.type2-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 10px
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

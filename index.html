@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="description" content="This is where your description goes">
+    <meta name="keywords" content="one, two, three">
+
+		<title>Title in the tab</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- iconify -->
+		<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+	</head>
+	<body>
+		<!-- Navigational Bar -->
+		<nav class="primary-nav">
+			<ul>
+				<li class="nav-item-container">
+					<!-- TODO: add bouncy animation to pokeball? -->
+					<img class="bouncy" src="img/pokeball-red.png">
+					<a class="primary-nav-links" href="index.html">Pokedex</a>
+				</li>
+			</ul>
+		</nav>
+
+	<div class='hero-container'>
+		<!-- Search Bar -->
+		<div class="search-bar-container">
+			<input class="search" type="text" name="" value="" placeholder="Search your Pokemon!">
+			<button class="search-btn"type="button" name="button">
+				<div class="circle">
+					<!-- remove js code and move to .js file if possible -->
+					<img class="pokeball-white" src="img/pokeball-white.png" alt=""
+					onmouseover="this.src='img/pokeball-red.png'"
+					onmouseout="this.src='img/pokeball-white.png'">
+				</div>
+			</button>
+		</div>
+		<!-- Display Area -->
+		<div class="display-area-container">
+			<div class="card-container">
+				<img class="pokemon-image" src="" alt="">
+				<div class="card-info">
+					<h3 id="number"></h3>
+					<h2 id="name"></h2>
+					<div class="type-container">
+						<div class="type1-container">
+								<h3 id="type1"></h3>
+						</div>
+						<div class="type2-container">
+							<h3 id="type2"></h3>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
