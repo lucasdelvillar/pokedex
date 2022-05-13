@@ -1,4 +1,6 @@
 //Example fetch using pokemonapi.co
+
+// edit code so that it only works with first 151 pokemon
 const pokemonTypeColors = {
   'normal': 'rgba(168, 167, 125)',
   'fire': 'rgba(226, 113, 68)',
@@ -20,13 +22,39 @@ const pokemonTypeColors = {
   'fairy': 'rgba(231, 184, 189)'
  }
 
+
+// On enter key to a search
+ document.querySelector('.search').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      getFetch()
+    }
+});
+
+
+document.querySelector('.flip-card-front').addEventListener('click', turnOver)
+
+// turns over card
+function turnOver() {
+  document.querySelector('.flip-card-inner').style.transform = 'rotateY(-180deg)'
+}
+
+document.querySelector('.flip-card-back').addEventListener('click', turnBack)
+
+// turns back card
+function turnBack() {
+  document.querySelector('.flip-card-inner').style.transform = 'rotateY(0deg)'
+}
+
+
 document.querySelector('button').addEventListener('click', getFetch)
 
+// fetches pokemon information
 function getFetch(){
   const choice = document.querySelector('input').value.toLowerCase()
   const url = `https://pokeapi.co/api/v2/pokemon/${choice}`
 
   const image = document.querySelector('img.pokemon-image')
+  const image2 = document.querySelector('img.pokemon-image2')
   const number =  document.querySelector('#number')
   const name = document.querySelector('#name')
   const type1 = document.querySelector('#type1')
@@ -37,7 +65,7 @@ function getFetch(){
   const type2Container = document.querySelector('.type2-container')
 
   // clear previous card info and hide previous containers
-  clear(image, number, name, type1, type2)
+  clear(image, image2, number, name, type1, type2)
   hide(type1Container)
   hide(type2Container)
   clearContainer(typeContainer)
@@ -47,7 +75,9 @@ function getFetch(){
       .then(data => {
         console.log(data)
 
-        fillCardInfo(image, number, name, type1, data)
+        // displays pokemon information
+        fillCardInfo(image, image2, number, name, type1, data)
+        document.querySelector('.title').innerText = 'Pokemon Entry'
         changeColor(data, pokemonTypeColors, type1Container, type2Container)
         unhide(type1Container)
 
@@ -61,11 +91,43 @@ function getFetch(){
       .catch(err => {
           console.log(`error ${err}`)
       });
+
+  // second fetch request for a pokemon dex entry description.
+  const url2 = `https://pokeapi.co/api/v2/pokemon-species/${choice}`
+  fetch(url2)
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        console.log(data)
+
+        let dexEntry = ''
+        let deArr = data.flavor_text_entries
+        // grab entry if language is english
+        for (let i = 0; i < deArr.length; i++) {
+          if (deArr[i].language.name === 'en') {
+            dexEntry = deArr[i].flavor_text
+            break
+          }
+        }
+
+        // formats dexEntry to look like a proper sentence.
+        dexEntry = dexEntry.replace(/\f/g, ' ')
+        //capitilize pokemon name
+        dexEntry = dexEntry.replace(choice.toUpperCase(), choice[0].toUpperCase() + choice.slice(1).toLowerCase())
+        // get rid of upper case letters
+        dexEntry = dexEntry.replace('POKéMON', 'pokémon')
+        document.querySelector('.dex-entry').innerHTML= dexEntry
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
 }
 
+//HELPER FUNCTIONS
+
 // Fills general card info
-function fillCardInfo(image, number, name, type1, data) {
-  image.src = data.sprites.front_default
+function fillCardInfo(image1, image2, number, name, type1, data) {
+  image1.src = data.sprites.front_default
+  image2.src = ''//data.sprites.front_default
   number.innerText = `N*${data.id}`
   name.innerText = data.name
   type1.innerText = data.types[0].type.name
@@ -77,15 +139,16 @@ function fillType2(type2, data) {
 }
 
 // Clears card information
-function clear(image, number, name, type1, type2) {
-  image.src = ""
-  number.innerText = ""
-  name.innerText = ""
-  type1.innerText = ""
-  type2.innerText = ""
+function clear(image1, image2, number, name, type1, type2) {
+  image1.src = ''
+  image2.src = ''
+  number.innerText = ''
+  name.innerText = ''
+  type1.innerText = ''
+  type2.innerText = ''
 }
 
-// unhides element container
+// unhides element container that has flex
 function unhide(element) {
   element.style.display = 'flex'
 }

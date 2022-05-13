@@ -22,7 +22,6 @@ img{
 }
 
 body {
-  /* background-color: rgba(246, 248, 252, 1) */
   background-color: rgba(244, 244, 248, 1)
 }
 
@@ -42,9 +41,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px 10%;
+  margin: 30px auto;
   height: 85px;
-  width: 80%;
+  /* width: 80%; */
+  width: 350px;
+  max-width: 50%;
   background-color: white;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -87,10 +88,12 @@ nav img {
 .search-bar-container {
   position: relative;
   height: 50px;
-  width: 80%;
+  /* width: 80%; */
+  width: 350px;
+  max-width: 50%;
   background-color: white;
   border-radius: 10px;
-  padding-left: 5%;
+  padding-left: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
@@ -116,8 +119,6 @@ input::placeholder {
 
 .search-btn {
   position: absolute;
-  /* top: 7px;
-  left: 23px; */
   bottom: 10px;
   right: 10px;
   cursor: pointer;
@@ -154,24 +155,12 @@ input::placeholder {
   margin-top: 60px;
 }
 
-.card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 160px;
-  width: 250px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.pokemon-image {
+.pokemon-image, .pokemon-image2 {
   position: absolute;
   top: -47px;
   /* may need to get rid of when adding more cards */
   /* maybe include this class as part of flex container and then position with absolute to adjust, card-container may need position: relative for this to work */
-  right: 70px;
+  right: 75px;
 }
 
 .card-info {
@@ -191,8 +180,6 @@ input::placeholder {
 .card-info #name {
   font-size: 18px;
   font-weight: bold;
-  /* margin-top: 5px;
-  margin-bottom: 15px; */
   margin: 10px 0;
   text-transform: capitalize;
 }
@@ -233,7 +220,79 @@ input::placeholder {
   margin-left: 10px
 }
 
+.title {
+  position: absolute;
+  top: -3px;
+  left: 57.21px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.dex-entry {
+  position: relative;
+  top: 15px;
+  padding: 14px;
+  height: 110px
+}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+/* used to flip pokemon card */
+
+/* The flip card container */
+.flip-card {
+  height: 160px;
+  width: 250px;
+  perspective: 1000px; /* Gives a 3D effect */
+  transform: none;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: none;
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+/* equivalent to .card-container */
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the back side */
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.card-info-back {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
