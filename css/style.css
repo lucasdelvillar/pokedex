@@ -22,8 +22,7 @@ img{
 }
 
 body {
-  /* background-color: rgba(244, 244, 248, 1) */
-  background-image: linear-gradient(to left, #e1c1d3, #dabad5, #cfb3d9, #c0afde, #ababe3, #99b0ec, #83b6f2, #67bcf5, #4ecbf9, #3bd8f8, #3ee5f1, #57f0e6);
+  background-color: rgba(244, 244, 248, 1)
 }
 
 .hero-container {
