@@ -23,13 +23,12 @@ const pokemonTypeColors = {
  }
 
 
-// On enter key to a search
+// On enter key do a search
  document.querySelector('.search').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       getFetch()
     }
 });
-
 
 document.querySelector('.flip-card-front').addEventListener('click', turnOver)
 
@@ -44,7 +43,6 @@ document.querySelector('.flip-card-back').addEventListener('click', turnBack)
 function turnBack() {
   document.querySelector('.flip-card-inner').style.transform = 'rotateY(0deg)'
 }
-
 
 document.querySelector('button').addEventListener('click', getFetch)
 

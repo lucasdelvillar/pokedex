@@ -153,6 +153,7 @@ input::placeholder {
 .display-area-container {
   position: relative;
   margin-top: 60px;
+  display: flex;
 }
 
 .pokemon-image, .pokemon-image2 {
