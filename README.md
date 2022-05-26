@@ -1,30 +1,22 @@
 # Pokedex
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+This website replicates a pokedex from pokemon. You can search a pokemon and it's info will be displayed on both the front and back of the card. 
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+**Link to project:** https://ld-pokedex.netlify.app
 
-![alt tag](http://placecorgi.com/1200/650)
+![alt tag](https://i.imgur.com/itKqjw3.png)
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Framework of choice
+**Tech used:** HTML, CSS, JavaScript, pokemonapi.co
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
-
-## Optimizations
-*(optional)*
-
-You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+Two fetch requests are made to the pokemon api (pokemonapi.co). The first fetch request grabs the json file containing generic pokemon information, while the second fetch request grabs more specific info i.e. the "dex-entry" (generic description of a pokemon). Helper functions created in Javascript then display and clear pokemon info once json is parsed. 
 
 ## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *fuck yeah I did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+One of the most important lessons I learned was how to read and understand the documentation of an API. I learned to get comfortable getting lost in the doc and to play around with examples provided. It's extremely helpful to use postman.co before programming anything to see what different queries / search parameters give back. 
 
-## Examples:
-Take a look at these couple examples that I have in my own portfolio:
+Working with api's and the objects they return is actually quite amazing and still blows my mind. What can be difficult is accessing the right information when data is heavily nested, e.g. grabbing an item in a array, that is nested within an object, which is nested within another object. It's easy to get lost. 
 
-**Palettable:** https://github.com/alecortega/palettable
+.replace() combinbed with regex is a very powerful tool for formatting strings. 
 
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
 
-**Patch Panel:** https://github.com/alecortega/patch-panel
