@@ -17,7 +17,7 @@ Instead of following functional programming practices, I could have used OOP and
 
 ## Lessons Learned:
 
-One of the most important lessons I learned was how to read and understand the documentation of an API. I learned to get comfortable getting lost in the doc and to play around with examples provided. It's extremely helpful to use postman.co before programming anything to see what different query parameters give back. 
+One of the most important lessons I learned was how to read and understand the documentation of an API. I learned to get comfortable getting lost in the doc and to play around with examples provided. It's extremely helpful to use Postman before programming anything to see what different query parameters give back and to test the API in general.
 
 Working with API's and the objects they return is actually quite amazing and still blows my mind. What can be difficult is accessing the right information when data is heavily nested, e.g. grabbing an item in a array, that is nested within an object, which is nested within another object. It's easy to get lost and I need to be mindful of what I'm actually accessing.
 
