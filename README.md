@@ -7,7 +7,7 @@ This website replicates a pokédex from Pokémon. You can search a pokémon and 
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, pokemonapi.co
+**Tech used:** HTML, CSS, JavaScript, PokéAPI
 
 Two fetch requests are made to the pokemon api (pokemonapi.co). The first fetch request grabs the json file containing generic pokémon information, while the second fetch request grabs more specific info i.e. the "dex-entry" (generic description of a pokémon). Helper functions created in Javascript then display and clear pokémon info once json is parsed. 
 
