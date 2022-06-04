@@ -13,7 +13,7 @@ Two fetch requests are made to the pokemon api (pokemonapi.co). The first fetch 
 
 ## Optimizations:
 
-Instead of following functional programming practices, I could have used OOP and created a card class. The properties of this class would be the card information to be displayed and methods that allow you to hide/display information, flip the card over and back, etc. This would make my code base more maintainable, easier to update. The fetch request can be re-written in an async and await function providing cleaner code.
+Instead of following functional programming practices, I could have used OOP and created a card class. The properties of this class would be the card information to be displayed and methods that allow you to hide/display information, flip the card over and back, etc. This would make my code base more maintainable and easier to update. The fetch request can be re-written in an async and await function providing cleaner code.
 
 ## Lessons Learned:
 
