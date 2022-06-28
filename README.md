@@ -21,6 +21,6 @@ One of the most important lessons I learned was how to read and understand the d
 
 Working with API's and the objects they return is actually quite amazing and still blows my mind. What can be difficult is accessing the right information when data is heavily nested, e.g. grabbing an item in a array, that is nested within an object, which is nested within another object. It's easy to get lost and I need to be mindful of what I'm actually accessing.
 
-.replace() combinbed with regex is a very powerful tool for formatting strings.  
+.replace() combined with regex is a very powerful tool for formatting strings.  
 
 
